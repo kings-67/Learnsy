@@ -1,0 +1,1523 @@
+/* ==========================================================================
+   1. ESTILOS GENERALES Y BASE
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0A0A0A;
+    color: white;
+    line-height: 1.4;
+    overflow-x: hidden;
+    font-size: 14px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+/* ==========================================================================
+   2. HEADER
+   ========================================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* ==========================================================================
+   3. HERO - VERSIÓN PC
+   ========================================================================== */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 90px;
+    align-items: center;
+}
+
+.column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.text-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.image-column {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title {
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.subtitle {
+    color: #CCCCCC;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+}
+
+.cta-button {
+    background-color: #0FFF95;
+    color: #000;
+    border-radius: 6px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 700;
+    border: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #0ad87b;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   4. IMÁGENES - CONTENEDOR CON ALTURA DEFINIDA
+   ========================================================================== */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 3;
+    margin: 0 auto;
+}
+
+.main-image {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 2;
+    width: 120%;
+    transform: rotate(-5deg) translate(-15px, -10px);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.8s ease-out;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 70px;
+    right: 5px;
+    z-index: 3;
+    width: 80%;
+    transform: rotate(8deg);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.8s ease-out;
+}
+
+.reveal.active .main-image {
+    transform: rotate(-5deg) translate(0, -5px);
+}
+
+.reveal.active .overlay-image {
+    transform: rotate(8deg) translateX(5px);
+}
+
+/* ==========================================================================
+   5. RESTO DE SECCIONES
+   ========================================================================== */
+section {
+    padding: 3rem 0;
+}
+
+.divider {
+    border-top: 1px solid #00ff87;
+    margin: 3rem auto;
+    width: 97%;
+}
+
+/* ==========================================================================
+   6. SECCIÓN CONCEPTO
+   ========================================================================== */
+.why-learnsy-background {
+    margin-top: 90px;
+    text-align: left;
+    padding: 80px 20px;
+    background: #f8f8f8;
+    border-radius: 16px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.why-learnsy-background.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.why-learnsy-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 2rem;
+}
+
+.image-container-left {
+    flex: 1;
+    max-width: 45%;
+    opacity: 0;
+    transform: rotate(-5deg) translateX(-140px);
+    transition: opacity 0.5s ease-out, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-learnsy-background.active .image-container-left {
+    opacity: 1;
+    transform: rotate(-5deg) translateX(-60px);
+}
+
+.learnsy-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.text-container-right {
+    flex: 1;
+    max-width: 100%;
+    text-align: left;
+}
+
+.main-title-learnsy {
+    color: #0A0A0A;
+    font-weight: 800;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.subtitle-learnsy {
+    color: #2d2d2d;
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   7. SECCIÓN PILARES
+   ========================================================================== */
+.pilares-zigzag {
+    padding: 4rem 0;
+    background-color: #0A0A0A;
+}
+
+.titulo-pilares-container {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 0.8s ease-out;
+}
+
+.titulo-pilares-container.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pilares-title {
+    color: #00ff87;
+    font-weight: 800;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.pilar-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 12rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.pilar-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pilar-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.pilar-img {
+    flex: none;
+    width: 580px;
+    height: 580px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pilar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.pilar-img img:hover {
+    transform: scale(1.05);
+}
+
+.pilar-text {
+    flex: 1;
+    color: white;
+}
+
+.pilar-text h3 {
+    color: #00ff87;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.pilar-text p,
+.subtitle-pilar {
+    font-size: 1.1rem;
+    color: #CCCCCC;
+    line-height: 1.6;
+}
+
+.pilares-zigzag .pilar-card.last-pilar {
+    margin-bottom: 2rem;
+}
+
+.profesor-item,
+.curso-item {
+    border-left: 3px solid #00ff87;
+    padding-left: 16px;
+    margin-bottom: 24px;
+}
+
+.materia {
+    color: #f8f8f8;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.profesor {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.profesor:hover {
+    color: #00ff87;
+}
+
+.curso-item .blanco {
+    color: #f8f8f8;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: block;
+}
+
+/* ==========================================================================
+   8. CARRUSEL
+   ========================================================================== */
+.equipo-section {
+    margin-top: 100px;
+    text-align: center;
+    padding: 80px 0;
+    background: #f8f8f8;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.equipo-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.equipo-title {
+    color: #0A0A0A;
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+}
+
+.equipo-gallery {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.equipo-track {
+    display: flex;
+    width: max-content;
+    animation: seamlessLoop 35s linear infinite;
+    gap: 0;
+}
+
+.equipo-item {
+    width: 320px;
+    margin-right: 50px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.equipo-item img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    display: block;
+}
+
+.equipo-text {
+    padding: 28px 25px 35px 25px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #dddddd;
+    text-align: center;
+    min-height: 130px;
+    display: block !important;
+    white-space: normal;
+    word-wrap: break-word;
+    background-color: #1a1a1a;
+    border-radius: 0 0 20px 20px;
+}
+
+.equipo-item:hover {
+    transform: scale(1.06);
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+@keyframes seamlessLoop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   9. SECCIÓN FINAL
+   ========================================================================== */
+.es-hora-de-cambiar-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.es-hora-de-cambiar-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cambiar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 6rem 20px;
+}
+
+.cambiar-text {
+    flex: 1;
+    max-width: 580px;
+    text-align: left;
+    position: relative;
+}
+
+.cambiar-text h2 {
+    color: #00ff87;
+    font-weight: 800;
+    font-size: 3.2rem;
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cambiar-text p {
+    font-size: 1.18rem;
+    line-height: 1.65;
+    color: #CCCCCC;
+    margin-bottom: 1.5rem;
+}
+
+.cambiar-image {
+    flex: 1;
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cambiar-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65);
+    margin-bottom: 2rem;
+}
+
+.cambiar-image .cta-button,
+.cambiar-image button,
+.cambiar-image .cambiar-button {
+    width: auto;
+    padding: 0.65rem 2.1rem;
+    font-size: 0.88rem;
+    text-align: center;
+    box-sizing: border-box;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.flecha-indicadora {
+    position: absolute;
+    width: 110px;
+    height: auto;
+    bottom: -15px;
+    right: -30px;
+    opacity: 0.8;
+    animation: none;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   10. CLASES DE UTILIDAD
+   ========================================================================== */
+.resaltar {
+    color: #f89c1c;
+    font-weight: 700;
+    display: inline !important;
+}
+
+.verde {
+    color: #00ff87;
+    font-weight: 700;
+}
+
+.blanco {
+    color: #f8f8f8;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    display: inline-block;
+    letter-spacing: 0.3px;
+}
+
+.gris {
+    color: #9ca3af;
+    font-weight: 400;
+    font-size: 17px;
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 12px;
+}
+
+/* ==========================================================================
+   11. ANIMACIÓN REVEAL
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px) translateX(-15px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+/* ==========================================================================
+   12. CONTROL DE VERSIONES PC / MÓVIL
+   ========================================================================== */
+
+/* Por defecto (PC): Mostrar versión PC, ocultar móvil */
+.pc-version {
+    display: flex !important;
+}
+
+.mobile-hero {
+    display: none !important;
+}
+
+/* ==========================================================================
+   13. MEDIA QUERIES - TABLET
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .pilar-img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .equipo-item {
+        width: 280px;
+        margin-right: 40px;
+    }
+
+    .equipo-item img {
+        height: 320px;
+    }
+
+    .equipo-text {
+        min-height: 110px;
+        font-size: 14px;
+        padding: 20px 20px 28px;
+    }
+
+    .main-title-learnsy {
+        font-size: 2.8rem;
+    }
+
+    .cambiar-text h2 {
+        font-size: 2.8rem;
+    }
+
+    .flecha-indicadora {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   14. MEDIA QUERIES - MÓVIL (TODAS LAS RESOLUCIONES)
+   ========================================================================== */
+
+/* === MÓVIL ESTÁNDAR (hasta 768px) === */
+@media (max-width: 768px) {
+    /* Ocultar PC, mostrar móvil */
+    .pc-version {
+        display: none !important;
+    }
+    
+    .mobile-hero {
+        display: block !important;
+    }
+    
+    /* Ocultar botón del header en móvil */
+    .header .cta-button {
+        display: none !important;
+    }
+    
+    /* ======================================== */
+    /* TEXTO - CON WORD WRAP FORZADO */
+    /* ======================================== */
+    
+    /* Título móvil - FORZAR SALTO DE LÍNEA */
+    .mobile-title {
+        font-size: 1.6rem !important;
+        text-align: left !important;
+        margin: 0 !important;
+        margin-bottom: 0.5rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+        display: block !important;
+    }
+    
+    /* Subtítulo móvil - FORZAR SALTO DE LÍNEA */
+    .mobile-subtitle {
+        font-size: 0.95rem !important;
+        text-align: left !important;
+        margin: 0 !important;
+        margin-bottom: 1.5rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+        display: block !important;
+    }
+    
+    /* ======================================== */
+    /* IMÁGENES MÓVIL - MÁS PEQUEÑAS */
+    /* ======================================== */
+    .mobile-images {
+        max-width: 280px !important;
+        aspect-ratio: 4/3 !important;
+        margin: 0 auto !important;
+        padding: 10px 0 !important;
+        position: relative !important;
+        width: 100% !important;
+    }
+    
+    .mobile-main-image {
+        position: absolute !important;
+        top: 25px !important;
+        left: 0 !important;
+        z-index: 2 !important;
+        width: 120% !important;
+        transform: rotate(-5deg) translate(-8px, -8px) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+        transition: transform 0.8s ease-out !important;
+    }
+    
+    .mobile-overlay-image {
+        position: absolute !important;
+        top: 55px !important;
+        right: 5px !important;
+        z-index: 3 !important;
+        width: 80% !important;
+        transform: rotate(8deg) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+        transition: transform 0.8s ease-out !important;
+    }
+    
+    /* BOTÓN - ESPACIO AMPLIO */
+    .mobile-btn {
+        margin: 0 !important;
+        margin-top: 160px !important;
+        display: inline-block !important;
+        align-self: flex-start !important;
+        padding: 0.5rem 1.2rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    /* ======================================== */
+    /* RESTO DE SECCIONES - WORD WRAP FORZADO */
+    /* ======================================== */
+    
+    .why-learnsy-background {
+        padding: 40px 15px !important;
+        margin-top: 30px !important;
+    }
+
+    .why-learnsy-section {
+        flex-direction: column !important;
+        padding: 0 !important;
+        gap: 1.5rem !important;
+        align-items: center !important;
+    }
+
+    .image-container-left {
+        max-width: 80% !important;
+        margin-right: 0 !important;
+        transform: rotate(0deg) translateX(0) !important;
+        opacity: 0 !important;
+        transition: opacity 1.5s ease-out, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .why-learnsy-background.active .image-container-left {
+        opacity: 1 !important;
+        transform: rotate(0deg) translateX(0) !important;
+    }
+
+    .learnsy-image {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+
+    .text-container-right {
+        max-width: 100% !important;
+        text-align: left !important;
+    }
+
+    .main-title-learnsy {
+        font-size: 2rem !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .subtitle-learnsy {
+        font-size: 15px !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .titulo-pilares-container {
+        margin-top: 60px !important;
+        margin-bottom: 50px !important;
+    }
+
+    .pilares-title {
+        font-size: 1.6rem !important;
+        line-height: 1.3 !important;
+        padding: 0 10px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .pilar-card {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        margin-bottom: 5rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .pilar-card.reverse {
+        flex-direction: column !important;
+    }
+
+    .pilar-img {
+        width: 100% !important;
+        max-width: 300px !important;
+        height: 300px !important;
+    }
+
+    .pilar-text {
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .pilar-text h3 {
+        font-size: 1.6rem !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .pilar-text p,
+    .subtitle-pilar {
+        font-size: 0.95rem !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .profesor-item,
+    .curso-item {
+        text-align: left !important;
+        border-left: 3px solid #00ff87 !important;
+        padding-left: 12px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .materia,
+    .curso-item .blanco {
+        font-size: 0.95rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .profesor {
+        font-size: 0.85rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .equipo-section {
+        padding: 40px 0 !important;
+        margin-top: 50px !important;
+        border-radius: 16px !important;
+    }
+
+    .equipo-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 30px !important;
+        padding: 0 15px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .equipo-item {
+        width: 220px !important;
+        margin-right: 25px !important;
+        border-radius: 16px !important;
+    }
+
+    .equipo-item img {
+        height: 250px !important;
+        border-radius: 16px 16px 0 0 !important;
+    }
+
+    .equipo-text {
+        min-height: 90px !important;
+        font-size: 12px !important;
+        padding: 16px 14px 20px !important;
+        border-radius: 0 0 16px 16px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .equipo-item:hover {
+        transform: scale(1.04) !important;
+    }
+
+    .es-hora-de-cambiar-section {
+        padding: 2rem 0 !important;
+    }
+
+    .cambiar-container {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        padding: 3rem 15px !important;
+        text-align: left !important;
+    }
+
+    .cambiar-text {
+        max-width: 100% !important;
+        text-align: left !important;
+        width: 100% !important;
+    }
+
+    .cambiar-text h2 {
+        font-size: 2rem !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .cambiar-text p {
+        font-size: 0.95rem !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .cambiar-image {
+        max-width: 100% !important;
+    }
+
+    .cambiar-image img {
+        max-width: 300px !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .cambiar-image .cta-button,
+    .cambiar-image .cambiar-button {
+        padding: 0.5rem 1.5rem !important;
+        font-size: 0.8rem !important;
+        width: auto !important;
+        display: inline-block !important;
+    }
+
+    .flecha-indicadora {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   15. iPHONE SE / 8 / 6/7/8 PLUS (375px - 414px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px !important;
+    }
+
+    .mobile-title {
+        font-size: 1.2rem !important;
+    }
+
+    .mobile-subtitle {
+        font-size: 0.8rem !important;
+    }
+
+    /* IMÁGENES - MÁS PEQUEÑAS PARA IPHONE PEQUEÑO */
+    .mobile-images {
+        max-width: 250px !important;
+    }
+
+    .mobile-main-image {
+        top: 20px !important;
+        width: 125% !important;
+        transform: rotate(-5deg) translate(-8px, -8px) !important;
+    }
+
+    .mobile-overlay-image {
+        top: 45px !important;
+        right: 3px !important;
+        width: 82% !important;
+        transform: rotate(8deg) !important;
+    }
+
+    .mobile-btn {
+        margin-top: 140px !important;
+        padding: 0.4rem 1rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    .main-title-learnsy {
+        font-size: 1.6rem !important;
+    }
+
+    .subtitle-learnsy {
+        font-size: 13px !important;
+    }
+
+    .pilares-title {
+        font-size: 1.3rem !important;
+    }
+
+    .pilar-img {
+        max-width: 240px !important;
+        height: 240px !important;
+    }
+
+    .pilar-text h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .equipo-title {
+        font-size: 1.4rem !important;
+    }
+
+    .equipo-item {
+        width: 180px !important;
+        margin-right: 20px !important;
+    }
+
+    .equipo-item img {
+        height: 200px !important;
+    }
+
+    .equipo-text {
+        min-height: 80px !important;
+        font-size: 11px !important;
+        padding: 12px 10px 16px !important;
+    }
+
+    .cambiar-text h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .cambiar-text p {
+        font-size: 0.85rem !important;
+    }
+
+    .cambiar-image img {
+        max-width: 240px !important;
+    }
+
+    .logo {
+        font-size: 1.3rem !important;
+    }
+
+    .cta-button {
+        font-size: 0.7rem !important;
+        padding: 0.35rem 0.9rem !important;
+    }
+}
+
+/* ==========================================================================
+   16. iPHONE 12 / 13 / 14 / 15 (390px - 430px)
+   ========================================================================== */
+@media (min-width: 390px) and (max-width: 430px) {
+    .mobile-title {
+        font-size: 1.4rem !important;
+    }
+
+    .mobile-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    .mobile-images {
+        max-width: 280px !important;
+    }
+
+    .mobile-main-image {
+        top: 25px !important;
+        width: 120% !important;
+        transform: rotate(-5deg) translate(-10px, -10px) !important;
+    }
+
+    .mobile-overlay-image {
+        top: 55px !important;
+        right: 5px !important;
+        width: 80% !important;
+        transform: rotate(8deg) !important;
+    }
+
+    .mobile-btn {
+        margin-top: 150px !important;
+        padding: 0.45rem 1.1rem !important;
+        font-size: 0.78rem !important;
+    }
+
+    .main-title-learnsy {
+        font-size: 1.8rem !important;
+    }
+
+    .subtitle-learnsy {
+        font-size: 14px !important;
+    }
+
+    .pilares-title {
+        font-size: 1.5rem !important;
+    }
+
+    .pilar-img {
+        max-width: 260px !important;
+        height: 260px !important;
+    }
+
+    .pilar-text h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .equipo-title {
+        font-size: 1.5rem !important;
+    }
+
+    .equipo-item {
+        width: 200px !important;
+        margin-right: 25px !important;
+    }
+
+    .equipo-item img {
+        height: 230px !important;
+    }
+
+    .equipo-text {
+        min-height: 90px !important;
+        font-size: 12px !important;
+        padding: 14px 12px 20px !important;
+    }
+
+    .cambiar-text h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .cambiar-text p {
+        font-size: 0.9rem !important;
+    }
+
+    .cambiar-image img {
+        max-width: 260px !important;
+    }
+}
+
+/* ==========================================================================
+   17. iPHONE 14 PRO MAX / 15 PRO MAX (430px - 450px)
+   ========================================================================== */
+@media (min-width: 430px) and (max-width: 460px) {
+    .mobile-title {
+        font-size: 1.5rem !important;
+    }
+
+    .mobile-subtitle {
+        font-size: 0.95rem !important;
+    }
+
+    .mobile-images {
+        max-width: 300px !important;
+    }
+
+    .mobile-main-image {
+        top: 30px !important;
+        width: 118% !important;
+        transform: rotate(-5deg) translate(-12px, -12px) !important;
+    }
+
+    .mobile-overlay-image {
+        top: 60px !important;
+        right: 5px !important;
+        width: 78% !important;
+        transform: rotate(8deg) !important;
+    }
+
+    .mobile-btn {
+        margin-top: 160px !important;
+        padding: 0.5rem 1.2rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* ==========================================================================
+   18. MÓVIL MUY PEQUEÑO (< 360px - iPhone 4/5/SE antiguo)
+   ========================================================================== */
+@media (max-width: 380px) {
+    .mobile-title {
+        font-size: 1rem !important;
+    }
+
+    .mobile-subtitle {
+        font-size: 0.75rem !important;
+    }
+
+    .mobile-images {
+        max-width: 200px !important;
+        padding: 5px 0 !important;
+    }
+
+    .mobile-main-image {
+        top: 15px !important;
+        width: 130% !important;
+        transform: rotate(-5deg) translate(-5px, -5px) !important;
+    }
+
+    .mobile-overlay-image {
+        top: 35px !important;
+        right: 3px !important;
+        width: 85% !important;
+        transform: rotate(8deg) !important;
+    }
+
+    .mobile-btn {
+        margin-top: 120px !important;
+        padding: 0.3rem 0.8rem !important;
+        font-size: 0.65rem !important;
+    }
+
+    .equipo-item {
+        width: 150px !important;
+        margin-right: 15px !important;
+    }
+
+    .equipo-item img {
+        height: 180px !important;
+    }
+
+    .equipo-text {
+        min-height: 70px !important;
+        font-size: 10px !important;
+        padding: 10px 8px 14px !important;
+    }
+
+    .pilar-img {
+        max-width: 200px !important;
+        height: 200px !important;
+    }
+
+    .pilares-title {
+        font-size: 1rem !important;
+    }
+
+    .image-container-left {
+        max-width: 90% !important;
+    }
+
+    .main-title-learnsy {
+        font-size: 1.3rem !important;
+    }
+
+    .subtitle-learnsy {
+        font-size: 12px !important;
+    }
+
+    .cambiar-text h2 {
+        font-size: 1.3rem !important;
+    }
+
+    .cambiar-text p {
+        font-size: 0.75rem !important;
+    }
+
+    .cambiar-image img {
+        max-width: 200px !important;
+    }
+
+    .logo {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* ==========================================================================
+   19. MÓVIL GRANDE / TABLET PEQUEÑA (Pixel 7, iPhone 14 Pro Max, 430px - 768px)
+   ========================================================================== */
+@media (min-width: 460px) and (max-width: 768px) {
+    .mobile-title {
+        font-size: 1.8rem !important;
+    }
+
+    .mobile-subtitle {
+        font-size: 1rem !important;
+    }
+
+    .mobile-images {
+        max-width: 380px !important;
+    }
+
+    .mobile-main-image {
+        top: 35px !important;
+        width: 115% !important;
+        transform: rotate(-5deg) translate(-12px, -12px) !important;
+    }
+
+    .mobile-overlay-image {
+        top: 75px !important;
+        right: 8px !important;
+        width: 78% !important;
+        transform: rotate(8deg) !important;
+    }
+
+    .mobile-btn {
+        margin-top: 180px !important;
+        padding: 0.6rem 1.4rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    .equipo-item {
+        width: 260px !important;
+        margin-right: 35px !important;
+    }
+
+    .equipo-item img {
+        height: 300px !important;
+    }
+
+    .equipo-text {
+        min-height: 110px !important;
+        font-size: 14px !important;
+        padding: 20px 20px 28px !important;
+    }
+}
+
+/* ==========================================================================
+   20. TABLET (768px - 1024px) - REFINAMIENTO
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-title {
+        font-size: 2rem !important;
+    }
+
+    .subtitle {
+        font-size: 1.05rem !important;
+        max-width: 100% !important;
+    }
+
+    .image-container {
+        max-width: 350px !important;
+    }
+
+    .main-image {
+        top: 25px !important;
+        width: 115% !important;
+        transform: rotate(-5deg) translate(-12px, -8px) !important;
+    }
+
+    .overlay-image {
+        top: 60px !important;
+        right: 8px !important;
+        width: 78% !important;
+        transform: rotate(8deg) !important;
+    }
+
+    .pilar-img {
+        width: 350px !important;
+        height: 350px !important;
+    }
+
+    .equipo-item {
+        width: 280px !important;
+        margin-right: 40px !important;
+    }
+
+    .equipo-item img {
+        height: 320px !important;
+    }
+
+    .equipo-text {
+        min-height: 110px !important;
+        font-size: 14px !important;
+        padding: 20px 20px 28px !important;
+    }
+
+    .main-title-learnsy {
+        font-size: 2.8rem !important;
+    }
+
+    .cambiar-text h2 {
+        font-size: 2.8rem !important;
+    }
+
+    .flecha-indicadora {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   21. TABLET GRANDE / iPad Pro (1024px - 1366px)
+   ========================================================================== */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .container {
+        max-width: 1200px !important;
+    }
+
+    .main-title {
+        font-size: 2.4rem !important;
+    }
+
+    .subtitle {
+        font-size: 1.1rem !important;
+        max-width: 550px !important;
+    }
+
+    .image-container {
+        max-width: 450px !important;
+    }
+
+    .main-image {
+        top: 35px !important;
+        width: 115% !important;
+        transform: rotate(-5deg) translate(-15px, -10px) !important;
+    }
+
+    .overlay-image {
+        top: 75px !important;
+        right: 10px !important;
+        width: 78% !important;
+        transform: rotate(8deg) !important;
+    }
+
+    .pilar-img {
+        width: 500px !important;
+        height: 500px !important;
+    }
+
+    .equipo-item {
+        width: 320px !important;
+        margin-right: 50px !important;
+    }
+
+    .equipo-item img {
+        height: 380px !important;
+    }
+
+    .equipo-text {
+        min-height: 130px !important;
+        font-size: 15px !important;
+        padding: 28px 25px 35px !important;
+    }
+
+    .main-title-learnsy {
+        font-size: 3.2rem !important;
+    }
+
+    .cambiar-text h2 {
+        font-size: 3.2rem !important;
+    }
+}
