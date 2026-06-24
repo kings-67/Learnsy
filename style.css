@@ -43,33 +43,46 @@ body {
 }
 
 /* ==========================================================================
-   3. HERO - VERSIÓN PC
+   3. HERO - VERSIÓN PC (RESTAURADA)
    ========================================================================== */
 .columns {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 90px;
-    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible !important;
 }
 
 .column {
     flex: 1;
     min-width: 280px;
+    max-width: 50%;
+    overflow: visible !important;
 }
 
 .text-column {
     flex: 1;
     min-width: 280px;
+    max-width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .image-column {
     flex: 1;
     min-width: 280px;
+    max-width: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: visible !important;
+    position: relative;
 }
 
 .main-title {
@@ -79,6 +92,9 @@ body {
     line-height: 1.2;
     text-transform: uppercase;
     margin-top: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .subtitle {
@@ -86,30 +102,13 @@ body {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     max-width: 500px;
-}
-
-.cta-button {
-    background-color: #0FFF95;
-    color: #000;
-    border-radius: 6px;
-    padding: 0.6rem 1.4rem;
-    font-weight: 700;
-    border: none;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.cta-button:hover {
-    background-color: #0ad87b;
-    transform: scale(1.05);
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* ==========================================================================
-   4. IMÁGENES - CONTENEDOR CON ALTURA DEFINIDA
+   4. IMÁGENES - CONTENEDOR CON ALTURA DEFINIDA (RESTAURADO)
    ========================================================================== */
 .image-container {
     position: relative;
@@ -154,7 +153,37 @@ body {
 }
 
 /* ==========================================================================
-   5. RESTO DE SECCIONES
+   5. BOTÓN INSTAGRAM - COMPACTO Y ALINEADO A LA IZQUIERDA
+   ========================================================================== */
+.cta-button,
+.btn-instagram {
+    background-color: #0FFF95;
+    color: #000;
+    border-radius: 6px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 700;
+    border: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+    min-width: auto;
+    max-width: 100%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.cta-button:hover,
+.btn-instagram:hover {
+    background-color: #0ad87b;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   6. RESTO DE SECCIONES
    ========================================================================== */
 section {
     padding: 3rem 0;
@@ -167,7 +196,7 @@ section {
 }
 
 /* ==========================================================================
-   6. SECCIÓN CONCEPTO
+   7. SECCIÓN CONCEPTO
    ========================================================================== */
 .why-learnsy-background {
     margin-top: 90px;
@@ -243,7 +272,7 @@ section {
 }
 
 /* ==========================================================================
-   7. SECCIÓN PILARES
+   8. SECCIÓN PILARES
    ========================================================================== */
 .pilares-zigzag {
     padding: 4rem 0;
@@ -381,7 +410,7 @@ section {
 }
 
 /* ==========================================================================
-   8. CARRUSEL - VERSIÓN PC
+   9. CARRUSEL - VERSIÓN PC
    ========================================================================== */
 .equipo-section {
     margin-top: 100px;
@@ -489,7 +518,7 @@ section {
 }
 
 /* ==========================================================================
-   9. SECCIÓN FINAL
+   10. SECCIÓN FINAL
    ========================================================================== */
 .es-hora-de-cambiar-section {
     opacity: 0;
@@ -576,7 +605,7 @@ section {
 }
 
 /* ==========================================================================
-   10. CLASES DE UTILIDAD
+   11. CLASES DE UTILIDAD
    ========================================================================== */
 .resaltar {
     color: #f89c1c;
@@ -608,7 +637,7 @@ section {
 }
 
 /* ==========================================================================
-   11. ANIMACIÓN REVEAL
+   12. ANIMACIÓN REVEAL
    ========================================================================== */
 .reveal {
     opacity: 0;
@@ -622,7 +651,7 @@ section {
 }
 
 /* ==========================================================================
-   12. CONTROL DE VERSIONES PC / MÓVIL
+   13. CONTROL DE VERSIONES PC / MÓVIL
    ========================================================================== */
 
 /* Por defecto (PC): Mostrar versión PC, ocultar móvil */
@@ -635,7 +664,7 @@ section {
 }
 
 /* ==========================================================================
-   13. MEDIA QUERIES - TABLET (768px - 1024px)
+   14. MEDIA QUERIES - TABLET (768px - 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
     /* === PREVENIR SCROLL HORIZONTAL EN TABLET === */
@@ -731,7 +760,7 @@ section {
 }
 
 /* ==========================================================================
-   14. MEDIA QUERIES - MÓVIL (hasta 768px) - CON ANIMACIONES MANTENIDAS
+   15. MEDIA QUERIES - MÓVIL (hasta 768px) - CON ANIMACIONES MANTENIDAS
    ========================================================================== */
 @media (max-width: 768px) {
     /* === PREVENIR SCROLL HORIZONTAL EN MÓVIL === */
@@ -773,11 +802,93 @@ section {
     }
     
     /* ======================================== */
+    /* COLUMNAS - STACK EN MÓVIL */
+    /* ======================================== */
+    .columns {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        gap: clamp(0.5rem, 2vh, 1.5rem) !important;
+        margin-bottom: clamp(1.5rem, 4vh, 40px) !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+    }
+    
+    .column,
+    .text-column,
+    .image-column {
+        flex: 1 1 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .text-column {
+        order: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .image-column {
+        order: 2 !important;
+    }
+    
+    .text-column .cta-button,
+    .text-column .btn-instagram {
+        order: 3 !important;
+        margin-top: clamp(0.5rem, 2vh, 1.2rem) !important;
+        align-self: flex-start !important;
+        white-space: normal !important;
+        display: inline-block !important;
+        width: fit-content !important;
+    }
+    
+    .main-title {
+        font-size: clamp(1rem, 5vw, 1.6rem) !important;
+        text-align: left !important;
+    }
+    
+    .subtitle {
+        font-size: clamp(0.75rem, 2.5vw, 0.95rem) !important;
+        text-align: left !important;
+    }
+    
+    .image-container {
+        max-width: clamp(200px, 60vw, 300px) !important;
+        aspect-ratio: 4/3 !important;
+        padding: clamp(8px, 2vh, 16px) 0 !important;
+        margin: 0 auto !important;
+    }
+    
+    .main-image {
+        top: clamp(8%, 2vh, 15%) !important;
+        width: clamp(90%, 22vw, 115%) !important;
+        transform: rotate(-5deg) translate(clamp(-3px, -0.8vw, -6px), clamp(-3px, -0.8vh, -6px)) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+    }
+    
+    .overlay-image {
+        top: clamp(18%, 4vh, 30%) !important;
+        width: clamp(50%, 14vw, 75%) !important;
+        transform: rotate(8deg) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+    }
+    
+    .cta-button,
+    .btn-instagram {
+        font-size: clamp(0.6rem, 2vw, 0.75rem) !important;
+        padding: clamp(0.3rem, 0.8vh, 0.5rem) clamp(0.6rem, 1.5vw, 1rem) !important;
+        white-space: normal !important;
+        display: inline-block !important;
+        width: fit-content !important;
+    }
+    
+    /* ======================================== */
     /* TEXTO - CON WORD WRAP FORZADO */
     /* ======================================== */
     
     .mobile-title {
-        font-size: 1.6rem !important;
+        font-size: clamp(1rem, 5vw, 1.6rem) !important;
         text-align: left !important;
         margin: 0 !important;
         margin-bottom: 0.5rem !important;
@@ -791,7 +902,7 @@ section {
     }
     
     .mobile-subtitle {
-        font-size: 0.95rem !important;
+        font-size: clamp(0.75rem, 2.5vw, 0.95rem) !important;
         text-align: left !important;
         margin: 0 !important;
         margin-bottom: 1.5rem !important;
@@ -808,10 +919,10 @@ section {
     /* IMÁGENES MÓVIL - MANTENIENDO ANIMACIONES */
     /* ======================================== */
     .mobile-images {
-        max-width: 280px !important;
+        max-width: clamp(200px, 60vw, 300px) !important;
         aspect-ratio: 4/3 !important;
         margin: 0 auto !important;
-        padding: 20px 0 !important;
+        padding: clamp(8px, 2vh, 16px) 0 !important;
         position: relative !important;
         width: 100% !important;
         overflow: visible !important;
@@ -819,29 +930,28 @@ section {
     
     .mobile-main-image {
         position: absolute !important;
-        top: 25px !important;
+        top: clamp(8%, 2vh, 15%) !important;
         left: 0 !important;
         z-index: 2 !important;
-        width: 120% !important;
-        transform: rotate(-5deg) translate(-8px, -8px) !important;
+        width: clamp(90%, 22vw, 115%) !important;
+        transform: rotate(-5deg) translate(clamp(-3px, -0.8vw, -6px), clamp(-3px, -0.8vh, -6px)) !important;
         border-radius: 12px !important;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
     }
     
     .mobile-overlay-image {
         position: absolute !important;
-        top: 55px !important;
-        right: 5px !important;
+        top: clamp(18%, 4vh, 30%) !important;
+        right: 0 !important;
         z-index: 3 !important;
-        width: 80% !important;
+        width: clamp(50%, 14vw, 75%) !important;
         transform: rotate(8deg) !important;
         border-radius: 12px !important;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
     }
     
-    /* Mantener animación reveal en móvil */
     .reveal.active .mobile-main-image {
         transform: rotate(-5deg) translate(0, -5px) !important;
     }
@@ -850,14 +960,15 @@ section {
         transform: rotate(8deg) translateX(5px) !important;
     }
     
-    /* BOTÓN - ESPACIO AMPLIO */
     .mobile-btn {
         margin: 0 !important;
-        margin-top: 160px !important;
+        margin-top: clamp(1.5rem, 6vh, 120px) !important;
         display: inline-block !important;
         align-self: flex-start !important;
-        padding: 0.5rem 1.2rem !important;
-        font-size: 0.8rem !important;
+        padding: clamp(0.3rem, 0.8vh, 0.5rem) clamp(0.6rem, 1.5vw, 1rem) !important;
+        font-size: clamp(0.6rem, 2vw, 0.75rem) !important;
+        white-space: normal !important;
+        width: fit-content !important;
     }
     
     /* ======================================== */
@@ -905,7 +1016,7 @@ section {
     }
 
     .main-title-learnsy {
-        font-size: 2rem !important;
+        font-size: clamp(1.5rem, 4vw, 2.2rem) !important;
         text-align: left !important;
         max-width: 100% !important;
         width: 100% !important;
@@ -916,7 +1027,7 @@ section {
     }
 
     .subtitle-learnsy {
-        font-size: 15px !important;
+        font-size: clamp(0.85rem, 2vw, 1rem) !important;
         text-align: left !important;
         max-width: 100% !important;
         width: 100% !important;
@@ -932,7 +1043,7 @@ section {
     }
 
     .pilares-title {
-        font-size: 1.6rem !important;
+        font-size: clamp(1.3rem, 4vw, 1.8rem) !important;
         line-height: 1.3 !important;
         padding: 0 10px !important;
         max-width: 100% !important;
@@ -956,8 +1067,8 @@ section {
 
     .pilar-img {
         width: 100% !important;
-        max-width: 300px !important;
-        height: 300px !important;
+        max-width: clamp(220px, 60vw, 320px) !important;
+        height: clamp(220px, 60vw, 320px) !important;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
     }
 
@@ -968,7 +1079,7 @@ section {
     }
 
     .pilar-text h3 {
-        font-size: 1.6rem !important;
+        font-size: clamp(1.3rem, 3.5vw, 1.8rem) !important;
         text-align: left !important;
         max-width: 100% !important;
         width: 100% !important;
@@ -980,7 +1091,7 @@ section {
 
     .pilar-text p,
     .subtitle-pilar {
-        font-size: 0.95rem !important;
+        font-size: clamp(0.85rem, 2vw, 1rem) !important;
         text-align: left !important;
         max-width: 100% !important;
         width: 100% !important;
@@ -1001,7 +1112,7 @@ section {
 
     .materia,
     .curso-item .blanco {
-        font-size: 0.95rem !important;
+        font-size: clamp(0.85rem, 2vw, 1rem) !important;
         max-width: 100% !important;
         width: 100% !important;
         word-wrap: break-word !important;
@@ -1011,7 +1122,7 @@ section {
     }
 
     .profesor {
-        font-size: 0.85rem !important;
+        font-size: clamp(0.75rem, 1.8vw, 0.9rem) !important;
         max-width: 100% !important;
         width: 100% !important;
         word-wrap: break-word !important;
@@ -1031,7 +1142,7 @@ section {
     }
 
     .equipo-title {
-        font-size: 1.8rem !important;
+        font-size: clamp(1.3rem, 4vw, 1.8rem) !important;
         margin-bottom: 30px !important;
         padding: 0 15px !important;
         max-width: 100% !important;
@@ -1054,22 +1165,22 @@ section {
     }
 
     .equipo-item {
-        width: 220px !important;
-        margin-right: 25px !important;
+        width: clamp(170px, 45vw, 240px) !important;
+        margin-right: clamp(15px, 4vw, 30px) !important;
         border-radius: 16px !important;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease !important;
     }
 
     .equipo-item img {
-        height: 250px !important;
+        height: clamp(180px, 45vw, 260px) !important;
         border-radius: 16px 16px 0 0 !important;
     }
 
     .equipo-text {
-        min-height: 90px !important;
-        font-size: 12px !important;
-        padding: 16px 14px 20px !important;
+        min-height: clamp(70px, 15vh, 100px) !important;
+        font-size: clamp(10px, 2.5vw, 13px) !important;
+        padding: clamp(10px, 2vw, 18px) clamp(10px, 2vw, 16px) clamp(12px, 2.5vw, 22px) !important;
         border-radius: 0 0 16px 16px !important;
         max-width: 100% !important;
         width: 100% !important;
@@ -1112,7 +1223,7 @@ section {
     }
 
     .cambiar-text h2 {
-        font-size: 2rem !important;
+        font-size: clamp(1.5rem, 4vw, 2.2rem) !important;
         text-align: left !important;
         max-width: 100% !important;
         width: 100% !important;
@@ -1123,7 +1234,7 @@ section {
     }
 
     .cambiar-text p {
-        font-size: 0.95rem !important;
+        font-size: clamp(0.85rem, 2vw, 1rem) !important;
         text-align: left !important;
         max-width: 100% !important;
         width: 100% !important;
@@ -1138,7 +1249,7 @@ section {
     }
 
     .cambiar-image img {
-        max-width: 300px !important;
+        max-width: clamp(220px, 60vw, 320px) !important;
         margin-bottom: 1.5rem !important;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
     }
@@ -1149,6 +1260,7 @@ section {
         font-size: 0.8rem !important;
         width: auto !important;
         display: inline-block !important;
+        width: fit-content !important;
     }
 
     .flecha-indicadora {
@@ -1157,7 +1269,7 @@ section {
 }
 
 /* ==========================================================================
-   15. iPHONE SE / 8 / 6/7/8 PLUS (375px - 414px)
+   16. iPHONE SE / 8 / 6/7/8 PLUS (375px - 414px)
    ========================================================================== */
 @media (max-width: 480px) {
     /* === PREVENIR SCROLL HORIZONTAL EN IPHONE PEQUEÑO === */
@@ -1179,30 +1291,30 @@ section {
     }
 
     .mobile-title {
-        font-size: 1.2rem !important;
+        font-size: clamp(1rem, 4.5vw, 1.3rem) !important;
     }
 
     .mobile-subtitle {
-        font-size: 0.8rem !important;
+        font-size: clamp(0.7rem, 2.2vw, 0.85rem) !important;
     }
 
     .mobile-images {
-        max-width: 250px !important;
-        padding: 15px 0 !important;
+        max-width: clamp(180px, 65vw, 260px) !important;
+        padding: clamp(8px, 2vh, 16px) 0 !important;
     }
 
     .mobile-main-image {
-        top: 20px !important;
-        width: 125% !important;
-        transform: rotate(-5deg) translate(-8px, -8px) !important;
+        top: clamp(10px, 2.5%, 20px) !important;
+        width: clamp(95%, 22vw, 110%) !important;
+        transform: rotate(-5deg) translate(clamp(-3px, -0.8vw, -6px), clamp(-3px, -0.8vh, -6px)) !important;
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
     }
 
     .mobile-overlay-image {
-        top: 45px !important;
+        top: clamp(18px, 5%, 45px) !important;
         right: 3px !important;
-        width: 82% !important;
+        width: clamp(55%, 16vw, 75%) !important;
         transform: rotate(8deg) !important;
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
@@ -1217,51 +1329,51 @@ section {
     }
 
     .mobile-btn {
-        margin-top: 140px !important;
-        padding: 0.4rem 1rem !important;
-        font-size: 0.75rem !important;
+        margin-top: clamp(1.5rem, 6vh, 140px) !important;
+        padding: clamp(0.25rem, 0.8vh, 0.5rem) clamp(0.6rem, 1.5vw, 1rem) !important;
+        font-size: clamp(0.6rem, 1.8vw, 0.75rem) !important;
     }
 
     .main-title-learnsy {
-        font-size: 1.6rem !important;
+        font-size: clamp(1.3rem, 4vw, 1.8rem) !important;
     }
 
     .subtitle-learnsy {
-        font-size: 13px !important;
+        font-size: clamp(0.75rem, 2vw, 0.9rem) !important;
     }
 
     .pilares-title {
-        font-size: 1.3rem !important;
+        font-size: clamp(1.1rem, 3.5vw, 1.5rem) !important;
     }
 
     .pilar-img {
-        max-width: 240px !important;
-        height: 240px !important;
+        max-width: clamp(180px, 55vw, 260px) !important;
+        height: clamp(180px, 55vw, 260px) !important;
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25) !important;
     }
 
     .pilar-text h3 {
-        font-size: 1.3rem !important;
+        font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
     }
 
     .equipo-title {
-        font-size: 1.4rem !important;
+        font-size: clamp(1.1rem, 3.5vw, 1.5rem) !important;
     }
 
     .equipo-item {
-        width: 180px !important;
-        margin-right: 20px !important;
+        width: clamp(140px, 40vw, 190px) !important;
+        margin-right: clamp(12px, 3vw, 22px) !important;
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25) !important;
     }
 
     .equipo-item img {
-        height: 200px !important;
+        height: clamp(150px, 40vw, 210px) !important;
     }
 
     .equipo-text {
-        min-height: 80px !important;
-        font-size: 11px !important;
-        padding: 12px 10px 16px !important;
+        min-height: clamp(60px, 12vh, 85px) !important;
+        font-size: clamp(9px, 2.2vw, 12px) !important;
+        padding: clamp(8px, 1.5vw, 14px) clamp(8px, 1.5vw, 12px) clamp(10px, 2vw, 18px) !important;
     }
 
     .equipo-item:hover {
@@ -1269,30 +1381,33 @@ section {
     }
 
     .cambiar-text h2 {
-        font-size: 1.6rem !important;
+        font-size: clamp(1.3rem, 4vw, 1.8rem) !important;
     }
 
     .cambiar-text p {
-        font-size: 0.85rem !important;
+        font-size: clamp(0.75rem, 2vw, 0.9rem) !important;
     }
 
     .cambiar-image img {
-        max-width: 240px !important;
+        max-width: clamp(180px, 55vw, 260px) !important;
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25) !important;
     }
 
     .logo {
-        font-size: 1.3rem !important;
+        font-size: clamp(1.1rem, 3vw, 1.4rem) !important;
     }
 
-    .cta-button {
-        font-size: 0.7rem !important;
-        padding: 0.35rem 0.9rem !important;
+    .cta-button,
+    .btn-instagram {
+        font-size: clamp(0.6rem, 1.5vw, 0.75rem) !important;
+        padding: clamp(0.25rem, 0.8vh, 0.4rem) clamp(0.6rem, 1.5vw, 1rem) !important;
+        display: inline-block !important;
+        width: fit-content !important;
     }
 }
 
 /* ==========================================================================
-   16. iPHONE 12 / 13 / 14 / 15 (390px - 430px)
+   17. iPHONE 12 / 13 / 14 / 15 (390px - 430px)
    ========================================================================== */
 @media (min-width: 390px) and (max-width: 430px) {
     /* === PREVENIR SCROLL HORIZONTAL EN IPHONE 12/13/14/15 === */
@@ -1310,30 +1425,30 @@ section {
     }
 
     .mobile-title {
-        font-size: 1.4rem !important;
+        font-size: clamp(1.2rem, 4.5vw, 1.5rem) !important;
     }
 
     .mobile-subtitle {
-        font-size: 0.9rem !important;
+        font-size: clamp(0.8rem, 2.2vw, 0.95rem) !important;
     }
 
     .mobile-images {
-        max-width: 280px !important;
-        padding: 15px 0 !important;
+        max-width: clamp(200px, 65vw, 290px) !important;
+        padding: clamp(10px, 2vh, 18px) 0 !important;
     }
 
     .mobile-main-image {
-        top: 25px !important;
-        width: 120% !important;
-        transform: rotate(-5deg) translate(-10px, -10px) !important;
+        top: clamp(12px, 3%, 25px) !important;
+        width: clamp(100%, 22vw, 115%) !important;
+        transform: rotate(-5deg) translate(clamp(-4px, -0.8vw, -8px), clamp(-4px, -0.8vh, -8px)) !important;
         box-shadow: 0 15px 32px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
     }
 
     .mobile-overlay-image {
-        top: 55px !important;
-        right: 5px !important;
-        width: 80% !important;
+        top: clamp(20px, 5%, 50px) !important;
+        right: 3px !important;
+        width: clamp(55%, 16vw, 78%) !important;
         transform: rotate(8deg) !important;
         box-shadow: 0 15px 32px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
@@ -1348,69 +1463,75 @@ section {
     }
 
     .mobile-btn {
-        margin-top: 150px !important;
-        padding: 0.45rem 1.1rem !important;
-        font-size: 0.78rem !important;
+        margin-top: clamp(1.8rem, 7vh, 150px) !important;
+        padding: clamp(0.3rem, 1vh, 0.5rem) clamp(0.7rem, 1.8vw, 1.1rem) !important;
+        font-size: clamp(0.65rem, 2vw, 0.78rem) !important;
     }
 
     .main-title-learnsy {
-        font-size: 1.8rem !important;
+        font-size: clamp(1.5rem, 4vw, 2rem) !important;
     }
 
     .subtitle-learnsy {
-        font-size: 14px !important;
+        font-size: clamp(0.8rem, 2vw, 0.95rem) !important;
     }
 
     .pilares-title {
-        font-size: 1.5rem !important;
+        font-size: clamp(1.2rem, 3.5vw, 1.6rem) !important;
     }
 
     .pilar-img {
-        max-width: 260px !important;
-        height: 260px !important;
+        max-width: clamp(200px, 55vw, 280px) !important;
+        height: clamp(200px, 55vw, 280px) !important;
         box-shadow: 0 15px 32px rgba(0, 0, 0, 0.25) !important;
     }
 
     .pilar-text h3 {
-        font-size: 1.5rem !important;
+        font-size: clamp(1.2rem, 3vw, 1.6rem) !important;
     }
 
     .equipo-title {
-        font-size: 1.5rem !important;
+        font-size: clamp(1.2rem, 3.5vw, 1.6rem) !important;
     }
 
     .equipo-item {
-        width: 200px !important;
-        margin-right: 25px !important;
+        width: clamp(160px, 42vw, 210px) !important;
+        margin-right: clamp(14px, 3vw, 26px) !important;
         box-shadow: 0 15px 32px rgba(0, 0, 0, 0.25) !important;
     }
 
     .equipo-item img {
-        height: 230px !important;
+        height: clamp(170px, 42vw, 240px) !important;
     }
 
     .equipo-text {
-        min-height: 90px !important;
-        font-size: 12px !important;
-        padding: 14px 12px 20px !important;
+        min-height: clamp(65px, 13vh, 95px) !important;
+        font-size: clamp(9.5px, 2.3vw, 12.5px) !important;
+        padding: clamp(9px, 1.8vw, 16px) clamp(9px, 1.8vw, 14px) clamp(11px, 2.2vw, 20px) !important;
     }
 
     .cambiar-text h2 {
-        font-size: 1.8rem !important;
+        font-size: clamp(1.4rem, 4vw, 1.9rem) !important;
     }
 
     .cambiar-text p {
-        font-size: 0.9rem !important;
+        font-size: clamp(0.8rem, 2vw, 0.95rem) !important;
     }
 
     .cambiar-image img {
-        max-width: 260px !important;
+        max-width: clamp(200px, 55vw, 280px) !important;
         box-shadow: 0 15px 32px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .cta-button,
+    .btn-instagram {
+        display: inline-block !important;
+        width: fit-content !important;
     }
 }
 
 /* ==========================================================================
-   17. iPHONE 14 PRO MAX / 15 PRO MAX (430px - 450px)
+   18. iPHONE 14 PRO MAX / 15 PRO MAX (430px - 450px)
    ========================================================================== */
 @media (min-width: 430px) and (max-width: 460px) {
     /* === PREVENIR SCROLL HORIZONTAL EN IPHONE PRO MAX === */
@@ -1428,30 +1549,30 @@ section {
     }
 
     .mobile-title {
-        font-size: 1.5rem !important;
+        font-size: clamp(1.3rem, 4.5vw, 1.6rem) !important;
     }
 
     .mobile-subtitle {
-        font-size: 0.95rem !important;
+        font-size: clamp(0.85rem, 2.2vw, 1rem) !important;
     }
 
     .mobile-images {
-        max-width: 300px !important;
-        padding: 15px 0 !important;
+        max-width: clamp(220px, 65vw, 310px) !important;
+        padding: clamp(10px, 2vh, 20px) 0 !important;
     }
 
     .mobile-main-image {
-        top: 30px !important;
-        width: 118% !important;
-        transform: rotate(-5deg) translate(-12px, -12px) !important;
+        top: clamp(15px, 3%, 30px) !important;
+        width: clamp(100%, 22vw, 115%) !important;
+        transform: rotate(-5deg) translate(clamp(-4px, -0.8vw, -8px), clamp(-4px, -0.8vh, -8px)) !important;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
     }
 
     .mobile-overlay-image {
-        top: 60px !important;
+        top: clamp(25px, 6%, 60px) !important;
         right: 5px !important;
-        width: 78% !important;
+        width: clamp(55%, 16vw, 78%) !important;
         transform: rotate(8deg) !important;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
@@ -1466,14 +1587,20 @@ section {
     }
 
     .mobile-btn {
-        margin-top: 160px !important;
-        padding: 0.5rem 1.2rem !important;
-        font-size: 0.8rem !important;
+        margin-top: clamp(2rem, 7vh, 160px) !important;
+        padding: clamp(0.3rem, 1vh, 0.5rem) clamp(0.8rem, 2vw, 1.2rem) !important;
+        font-size: clamp(0.65rem, 2vw, 0.8rem) !important;
+    }
+
+    .cta-button,
+    .btn-instagram {
+        display: inline-block !important;
+        width: fit-content !important;
     }
 }
 
 /* ==========================================================================
-   18. MÓVIL MUY PEQUEÑO (< 360px - iPhone 4/5/SE antiguo)
+   19. MÓVIL MUY PEQUEÑO (< 360px - iPhone 4/5/SE antiguo)
    ========================================================================== */
 @media (max-width: 380px) {
     /* === PREVENIR SCROLL HORIZONTAL EN MÓVIL MUY PEQUEÑO === */
@@ -1491,30 +1618,30 @@ section {
     }
 
     .mobile-title {
-        font-size: 1rem !important;
+        font-size: clamp(0.85rem, 4vw, 1.1rem) !important;
     }
 
     .mobile-subtitle {
-        font-size: 0.75rem !important;
+        font-size: clamp(0.65rem, 2vw, 0.8rem) !important;
     }
 
     .mobile-images {
-        max-width: 200px !important;
-        padding: 10px 0 !important;
+        max-width: clamp(150px, 60vw, 210px) !important;
+        padding: clamp(5px, 1.5vh, 12px) 0 !important;
     }
 
     .mobile-main-image {
-        top: 15px !important;
-        width: 130% !important;
-        transform: rotate(-5deg) translate(-5px, -5px) !important;
+        top: clamp(6px, 1.5%, 15px) !important;
+        width: clamp(90%, 20vw, 110%) !important;
+        transform: rotate(-5deg) translate(clamp(-2px, -0.5vw, -5px), clamp(-2px, -0.5vh, -5px)) !important;
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
     }
 
     .mobile-overlay-image {
-        top: 35px !important;
+        top: clamp(12px, 3%, 35px) !important;
         right: 3px !important;
-        width: 85% !important;
+        width: clamp(50%, 14vw, 72%) !important;
         transform: rotate(8deg) !important;
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
@@ -1529,35 +1656,35 @@ section {
     }
 
     .mobile-btn {
-        margin-top: 120px !important;
-        padding: 0.3rem 0.8rem !important;
-        font-size: 0.65rem !important;
+        margin-top: clamp(1rem, 5vh, 120px) !important;
+        padding: clamp(0.2rem, 0.6vh, 0.35rem) clamp(0.5rem, 1.2vw, 0.8rem) !important;
+        font-size: clamp(0.5rem, 1.5vw, 0.65rem) !important;
     }
 
     .equipo-item {
-        width: 150px !important;
-        margin-right: 15px !important;
+        width: clamp(120px, 35vw, 160px) !important;
+        margin-right: clamp(10px, 2vw, 18px) !important;
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25) !important;
     }
 
     .equipo-item img {
-        height: 180px !important;
+        height: clamp(130px, 35vw, 190px) !important;
     }
 
     .equipo-text {
-        min-height: 70px !important;
-        font-size: 10px !important;
-        padding: 10px 8px 14px !important;
+        min-height: clamp(50px, 10vh, 75px) !important;
+        font-size: clamp(8px, 2vw, 11px) !important;
+        padding: clamp(6px, 1.2vw, 12px) clamp(6px, 1.2vw, 10px) clamp(8px, 1.5vw, 16px) !important;
     }
 
     .pilar-img {
-        max-width: 200px !important;
-        height: 200px !important;
+        max-width: clamp(150px, 50vw, 220px) !important;
+        height: clamp(150px, 50vw, 220px) !important;
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25) !important;
     }
 
     .pilares-title {
-        font-size: 1rem !important;
+        font-size: clamp(0.8rem, 3vw, 1.1rem) !important;
     }
 
     .image-container-left {
@@ -1566,33 +1693,39 @@ section {
     }
 
     .main-title-learnsy {
-        font-size: 1.3rem !important;
+        font-size: clamp(1.1rem, 3.5vw, 1.4rem) !important;
     }
 
     .subtitle-learnsy {
-        font-size: 12px !important;
+        font-size: clamp(0.65rem, 1.8vw, 0.8rem) !important;
     }
 
     .cambiar-text h2 {
-        font-size: 1.3rem !important;
+        font-size: clamp(1.1rem, 3.5vw, 1.4rem) !important;
     }
 
     .cambiar-text p {
-        font-size: 0.75rem !important;
+        font-size: clamp(0.65rem, 1.8vw, 0.8rem) !important;
     }
 
     .cambiar-image img {
-        max-width: 200px !important;
+        max-width: clamp(150px, 50vw, 220px) !important;
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25) !important;
     }
 
     .logo {
-        font-size: 1.1rem !important;
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem) !important;
+    }
+
+    .cta-button,
+    .btn-instagram {
+        display: inline-block !important;
+        width: fit-content !important;
     }
 }
 
 /* ==========================================================================
-   19. MÓVIL GRANDE / TABLET PEQUEÑA (460px - 768px)
+   20. MÓVIL GRANDE / TABLET PEQUEÑA (460px - 768px)
    ========================================================================== */
 @media (min-width: 460px) and (max-width: 768px) {
     /* === PREVENIR SCROLL HORIZONTAL EN MÓVIL GRANDE === */
@@ -1610,30 +1743,30 @@ section {
     }
 
     .mobile-title {
-        font-size: 1.8rem !important;
+        font-size: clamp(1.5rem, 4.5vw, 2rem) !important;
     }
 
     .mobile-subtitle {
-        font-size: 1rem !important;
+        font-size: clamp(0.9rem, 2.2vw, 1.1rem) !important;
     }
 
     .mobile-images {
-        max-width: 380px !important;
-        padding: 20px 0 !important;
+        max-width: clamp(280px, 65vw, 400px) !important;
+        padding: clamp(15px, 2.5vh, 25px) 0 !important;
     }
 
     .mobile-main-image {
-        top: 35px !important;
-        width: 115% !important;
-        transform: rotate(-5deg) translate(-12px, -12px) !important;
+        top: clamp(20px, 4%, 35px) !important;
+        width: clamp(100%, 22vw, 115%) !important;
+        transform: rotate(-5deg) translate(clamp(-6px, -1vw, -12px), clamp(-6px, -1vh, -12px)) !important;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
     }
 
     .mobile-overlay-image {
-        top: 75px !important;
+        top: clamp(35px, 8%, 75px) !important;
         right: 8px !important;
-        width: 78% !important;
+        width: clamp(55%, 16vw, 78%) !important;
         transform: rotate(8deg) !important;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
         transition: transform 0.8s ease-out !important;
@@ -1648,131 +1781,35 @@ section {
     }
 
     .mobile-btn {
-        margin-top: 180px !important;
-        padding: 0.6rem 1.4rem !important;
-        font-size: 0.9rem !important;
+        margin-top: clamp(2.5rem, 8vh, 180px) !important;
+        padding: clamp(0.4rem, 1.2vh, 0.6rem) clamp(1rem, 2.5vw, 1.4rem) !important;
+        font-size: clamp(0.7rem, 2vw, 0.9rem) !important;
     }
 
     .equipo-item {
-        width: 260px !important;
-        margin-right: 35px !important;
+        width: clamp(200px, 45vw, 280px) !important;
+        margin-right: clamp(20px, 4vw, 35px) !important;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
     }
 
     .equipo-item img {
-        height: 300px !important;
+        height: clamp(220px, 45vw, 310px) !important;
     }
 
     .equipo-text {
-        min-height: 110px !important;
-        font-size: 14px !important;
-        padding: 20px 20px 28px !important;
+        min-height: clamp(80px, 15vh, 115px) !important;
+        font-size: clamp(11px, 2.5vw, 14px) !important;
+        padding: clamp(14px, 2.5vw, 22px) clamp(14px, 2.5vw, 20px) clamp(16px, 3vw, 28px) !important;
     }
 
     .equipo-item:hover {
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.32) !important;
     }
-}
 
-/* ==========================================================================
-   20. TABLET GRANDE / iPad Pro (1024px - 1366px)
-   ========================================================================== */
-@media (min-width: 1024px) and (max-width: 1366px) {
-    /* === PREVENIR SCROLL HORIZONTAL EN TABLET GRANDE === */
-    html, body {
-        overflow-x: hidden !important;
-        max-width: 100% !important;
-    }
-    
-    .container {
-        overflow-x: hidden !important;
-        max-width: 100% !important;
-        max-width: 1200px !important;
-    }
-    
-    .columns,
-    .why-learnsy-section,
-    .pilares-zigzag,
-    .cambiar-container {
-        overflow-x: hidden !important;
-        max-width: 100% !important;
-    }
-
-    .main-title {
-        font-size: 2.4rem !important;
-    }
-
-    .subtitle {
-        font-size: 1.1rem !important;
-        max-width: 550px !important;
-    }
-
-    .image-container {
-        max-width: 450px !important;
-        padding: 25px 0 !important;
-    }
-
-    .main-image {
-        top: 35px !important;
-        width: 115% !important;
-        transform: rotate(-5deg) translate(-15px, -10px) !important;
-        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.28) !important;
-        transition: transform 0.8s ease-out !important;
-    }
-
-    .overlay-image {
-        top: 75px !important;
-        right: 10px !important;
-        width: 78% !important;
-        transform: rotate(8deg) !important;
-        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.28) !important;
-        transition: transform 0.8s ease-out !important;
-    }
-
-    .reveal.active .main-image {
-        transform: rotate(-5deg) translate(0, -5px) !important;
-    }
-    
-    .reveal.active .overlay-image {
-        transform: rotate(8deg) translateX(5px) !important;
-    }
-
-    .pilar-img {
-        width: 500px !important;
-        height: 500px !important;
-        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.28) !important;
-    }
-
-    .equipo-item {
-        width: 320px !important;
-        margin-right: 50px !important;
-        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.25) !important;
-    }
-
-    .equipo-item img {
-        height: 380px !important;
-    }
-
-    .equipo-text {
-        min-height: 130px !important;
-        font-size: 15px !important;
-        padding: 28px 25px 35px !important;
-    }
-
-    .equipo-item:hover {
-        box-shadow: 0 35px 70px rgba(0, 0, 0, 0.32) !important;
-    }
-
-    .main-title-learnsy {
-        font-size: 3.2rem !important;
-    }
-
-    .cambiar-text h2 {
-        font-size: 3.2rem !important;
-    }
-
-    .cambiar-image img {
-        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.28) !important;
+    .cta-button,
+    .btn-instagram {
+        display: inline-block !important;
+        width: fit-content !important;
     }
 }
 
